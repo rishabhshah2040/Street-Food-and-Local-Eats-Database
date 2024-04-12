@@ -130,5 +130,3 @@ CREATE TABLE Payment (
     TaxRate DECIMAL(5, 2),
     FOREIGN KEY (RegistrationID) REFERENCES EventRegistration(RegistrationID)
 );
-
-
