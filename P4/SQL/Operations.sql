@@ -46,7 +46,7 @@ BEGIN
 END;
 
 DECLARE @AverageRating FLOAT;
-EXEC GetAverageRating @VendorID = 1, @AverageRating = @AverageRating OUTPUT;
+EXEC GetAverageRating @VendorID = 26, @AverageRating = @AverageRating OUTPUT;
 SELECT @AverageRating AS AverageRating;
 
 -- View for User Ratings and Reviews
@@ -82,9 +82,10 @@ SELECT * FROM VendorCuisineDetails;
 SELECT * FROM EventRegistrationsAttendees;
 
 
+
 -- Trigger to Log New Reviews
 CREATE TABLE ReviewLog (
-    LogID INT PRIMARY KEY,
+    LogID INT IDENTITY(1,1) PRIMARY KEY,
     ReviewID INT,
     LogDate DATETIME,
     Action VARCHAR(50)
@@ -132,7 +133,7 @@ END;
 Select * from UserActivity;
 
 INSERT INTO EventRegistration (RegistrationID, UserID, EventID, ReservationDate, NumberOfPeople) VALUES
-(102, 27, 35, '2024-02-08', 4);
+(102, 27, 15, '2024-02-08', 4);
 
 Select * from UserActivity;
 
